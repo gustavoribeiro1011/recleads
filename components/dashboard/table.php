@@ -27,9 +27,10 @@
 
                     <div class="card mb-2">
                         <div class="card-body">
-                            <a href="#" onClick="openPage('analytics/report1','<?= $domain_id; ?>','<?= $domain; ?>')">
-                                <h5 class="card-title"><?= $row['domain']; ?></h5>
+                            <a href="https://<?= $row['domain']; ?>" class="btn-no-border" target="_blank" >
+                                <h5 class="card-title"><?= $row['domain']; ?> <i class="bi bi-arrow-up-right-square"></i></h5>
                             </a>
+                            <a href="javascript:void(0)" class="btn btn-success btn-sm" type="button" onClick="openPage('analytics/report1','<?= $domain_id; ?>','<?= $domain; ?>')">Ver leads</a>
                             Registros
                             Hoje: <?= $total_registers_today; ?>
 
