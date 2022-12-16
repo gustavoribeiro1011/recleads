@@ -24,11 +24,7 @@
 			<!-- JQuery-->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-			<!-- JQuery MaskedInput-->
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 
-			<!-- JQuery MaskMoney -->
-			<script src="<?= BASEURL; ?>inc/jquery.maskMoney.min.js"></script>
 
 			<!-- Alertify -->
 			<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>

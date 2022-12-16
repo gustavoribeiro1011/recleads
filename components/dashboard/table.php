@@ -30,7 +30,8 @@
                             <a href="https://<?= $row['domain']; ?>" class="btn-no-border" target="_blank" >
                                 <h5 class="card-title"><?= $row['domain']; ?> <i class="bi bi-arrow-up-right-square"></i></h5>
                             </a>
-                            <a href="javascript:void(0)" class="btn btn-success btn-sm" type="button" onClick="openPage('analytics/report1','<?= $domain_id; ?>','<?= $domain; ?>')">Ver leads</a>
+                            <a href="javascript:void(0)" class="btn btn-success btn-sm" type="button" 
+                            onClick="openPage('analytics/report1/index.php?domain_id=<?= $domain_id; ?>&domain=<?= $domain; ?>')">Ver leads</a>
                             Registros
                             Hoje: <?= $total_registers_today; ?>
 
@@ -41,7 +42,7 @@
 
             <?php }
             }
-            ?>
+            ?>           
         </div>
 
     </div>

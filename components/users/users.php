@@ -11,7 +11,7 @@
     $xcrud->columns('user'); //employees - MySQL table name
     $xcrud->table_name('Usuários');
     // $xcrud->unset_title();
-    $xcrud->column_pattern('user', '<a href="#" onClick="openPage(`domains`,{id})">{value}</a>');
+    $xcrud->column_pattern('user', '<a href="javascript:void(0);" onClick="openPage(`domains/domains.php?id={id}`)">{value}</a>');
 
     $xcrud->unset_numbers();
 
