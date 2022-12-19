@@ -18,7 +18,7 @@
     $xcrud->fields('user,username,password,level');
 
     $xcrud->change_type('level', 'select', '', 'admin,user');
-    $xcrud->change_type('user', 'int', '000', 10); // v1.5 legacy
+    $xcrud->change_type('user', 'text'); // v1.5 legacy
 
 
 
