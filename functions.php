@@ -14,7 +14,7 @@
 
     if (page.length == 0) {
       openPage("dashboard");
-            
+
     } else
 
     if (page == 'admin') {
@@ -32,14 +32,24 @@
       $("#main").load("components/users/users.php");
     }
 
-    if ( page.includes('domains') == true ) {
+    if (page.includes('domains') == true) {
 
       $("#main").load("components/" + page);
     }
 
-    if ( page.includes('analytics/report1') == true ) {
+    if (page.includes('analytics/report1') == true) {
 
       $("#main").load("components/" + page);
+    }
+
+    if (page.includes('relatorios') == true) {
+
+      $("#main").load("components/analytics/index.php");
+    }
+
+    if (page.includes('report2') == true) {
+
+      $("#main").load("components/analytics/report2/index.php");
     }
 
   };

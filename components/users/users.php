@@ -9,6 +9,7 @@
 
     $xcrud->table('users'); //employees - MySQL table name
     $xcrud->columns('user'); //employees - MySQL table name
+    $xcrud->order_by('id','desc');
     $xcrud->table_name('Usuários');
     // $xcrud->unset_title();
     $xcrud->column_pattern('user', '<a href="javascript:void(0);" onClick="openPage(`domains/domains.php?id={id}`)">{value}</a>');
@@ -17,11 +18,9 @@
 
     $xcrud->fields('user,username,password,level');
 
-    $xcrud->change_type('level', 'select', '', 'admin,user');
-    $xcrud->change_type('user', 'text'); // v1.5 legacy
-
-
-
+    $xcrud->change_type('level', 'select', '', 'user,admin');
+    
+    
     //Hide buttons 
     $xcrud->unset_print();
     $xcrud->unset_csv();
@@ -35,5 +34,6 @@
     echo $xcrud->render(); //magic
 
     ?>
+    <script></script>
   </div>
 </div>

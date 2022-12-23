@@ -13,12 +13,17 @@
           <!-- @import menu -->
           <?php if ($_SESSION['level_' . $app_token] == 'admin') { ?>
             <li class="nav-item">
-              <a class="nav-link active" 
-              type="button" 
-              aria-current="page" 
-              href="javascript:void(0)"
-              onClick="openPage('admin')">Painel do Administrador</a>
+              <a class="nav-link active" type="button" aria-current="page" href="javascript:void(0)" onClick="openPage('admin')"><i class="bi bi-person-gear"></i> Painel do Administrador</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" type="button" aria-current="page" href="javascript:void(0)" onClick="openPage('relatorios')"><i class="bi bi-graph-down"></i> Relatórios</a>
+            </li>
+
+            <li class="nav-item">
+            <?php include('components/analytics/counter/index.php');?>
+            </li>
+
           <?php } ?>
 
 
