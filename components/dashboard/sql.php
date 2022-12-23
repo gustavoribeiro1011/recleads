@@ -12,9 +12,7 @@ if (mysqli_connect_errno()) { // Se a conexão falhar...
     echo "<script>alertify.notify(decodeURIComponent($db_message), 'error', 10, function(){  console.log('dismissed'); });</script>";
 } else {
 
-    //Faz a consulta SQL
-    $level = $_SESSION['level_' . $app_token];
-    $user_id = $_SESSION['userid_' . $app_token];
+
 
     if ($level == "admin") {
         //lista geral
