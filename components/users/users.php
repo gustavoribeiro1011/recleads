@@ -16,9 +16,16 @@
 
     $xcrud->unset_numbers();
 
-    $xcrud->fields('user,username,password,level');
+    $xcrud->fields('user,username,password,phone,level');
 
     $xcrud->change_type('level', 'select', '', 'user,admin');
+
+    //Labels
+    $xcrud->label('user','Login');
+    $xcrud->label('username','Nome');
+    $xcrud->label('phone','Telefone');
+    $xcrud->label('level','Nível');
+    $xcrud->label('password','Senha');
     
     
     //Hide buttons 

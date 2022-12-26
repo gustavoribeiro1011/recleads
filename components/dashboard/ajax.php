@@ -43,7 +43,9 @@ if (mysqli_num_rows($res) > 0) {
                     if ($total_registers_today_ == '0') {
                         $total_registers_today = 'Leads Hoje <span class="badge rounded-pill" style="background:silver;">0</span>';
                     } else {
-                        $total_registers_today = 'Leads Hoje <span class="badge rounded-pill bg-success">' . $total_registers_today_ . '</span>';
+                        $total_registers_today = 'Leads Hoje <a href="https://wa.me/" target="_blank">';
+                        $total_registers_today .= '<span class="badge rounded-pill bg-success">';
+                        $total_registers_today .= $total_registers_today_ . '</a></span>';
                     }
                 }
             }
