@@ -1,4 +1,4 @@
-<div class="container">  
+<div class="container tb-dashboard p-0">  
     <table id="example" class="display" style="width:100%">
         <thead style="display:none;">
             <tr>

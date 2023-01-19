@@ -1,6 +1,7 @@
 <table id="example" class="table table-striped" style="width:100%;">
     <thead>
         <tr>
+            <th>#</th>
             <th>Origem</th>
             <th>Destino</th>
             <th>Nome</th>
@@ -38,6 +39,7 @@
                 if (!in_array($_SERVER['REMOTE_ADDR'], $whitelist)) { ?>
 
                     <tr>
+                        <td><?= $row['id_form']; ?></td>
                         <td><?= $row['origem']; ?></td>
                         <td><?= $row['destino']; ?></td>
                         <td><?= $row['nome']; ?></td>
@@ -49,6 +51,7 @@
                 <?php } else { ?>
 
                     <tr>
+                        <td><?= $row['id_form']; ?></td>
                         <td><?= utf8_encode($row['origem']); ?></td>
                         <td><?= utf8_encode($row['destino']); ?></td>
                         <td><?= utf8_encode($row['nome']); ?></td>

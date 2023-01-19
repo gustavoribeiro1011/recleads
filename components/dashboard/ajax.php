@@ -30,32 +30,43 @@ if (mysqli_num_rows($res) > 0) {
     $rows = array();
     while ($row = mysqli_fetch_assoc($res)) { {
 
+
+
             $domain_id = $row['id'];
             $domain = $row['domain'];
+            $primeiros_digitos_do_dominio = substr($domain, 0, 2);
 
-            $sql_count = "SELECT count(id) total FROM forms WHERE $date_today AND link='$domain'";
-            $result_count = mysqli_query($conn, $sql_count);
-            $total_registers_today = 0;
-            if (mysqli_num_rows($result_count) > 0) {
-                while ($row_count = mysqli_fetch_assoc($result_count)) {
-                    $total_registers_today_ = $row_count['total'];
+            //Desconsiderar a exibição de domínios que começar com 2. ou 3. ou 4.
+            if (
+                !($primeiros_digitos_do_dominio == "2." ||
+                    $primeiros_digitos_do_dominio == "3." ||
+                    $primeiros_digitos_do_dominio == "4.")
+            ) {
 
-                    if ($total_registers_today_ == '0') {
-                        $total_registers_today = 'Leads Hoje <span class="badge rounded-pill" style="background:silver;">0</span>';
-                    } else {
-                        $total_registers_today = 'Leads Hoje <a href="https://wa.me/" target="_blank">';
-                        $total_registers_today .= '<span class="badge rounded-pill bg-success">';
-                        $total_registers_today .= $total_registers_today_ . '</a></span>';
+                $sql_count = "SELECT count(id) total FROM forms WHERE $date_today AND link LIKE '%$domain%'";
+                $result_count = mysqli_query($conn, $sql_count);
+                $total_registers_today = 0;
+                if (mysqli_num_rows($result_count) > 0) {
+                    while ($row_count = mysqli_fetch_assoc($result_count)) {
+                        $total_registers_today_ = $row_count['total'];
+
+                        if ($total_registers_today_ == '0') {
+                            $total_registers_today = 'Leads Hoje <span class="badge rounded-pill" style="background:silver;">0</span>';
+                        } else {
+                            $total_registers_today = 'Leads Hoje <a href="https://wa.me/" target="_blank">';
+                            $total_registers_today .= '<span class="badge rounded-pill bg-success">';
+                            $total_registers_today .= $total_registers_today_ . '</a></span>';
+                        }
                     }
                 }
+
+
+                $rows[] = array(
+                    $row['id'], //1
+                    $row['domain'], //2
+                    $total_registers_today //3
+                );
             }
-
-
-            $rows[] = array(
-                $row['id'],//1
-                $row['domain'],//2
-                $total_registers_today//3
-            );
         }
 
         $data = array("data" => $rows);
