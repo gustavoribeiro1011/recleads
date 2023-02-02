@@ -21,13 +21,11 @@
                 {
                     target: 3,
                     visible: true,
-                },
-
+                },          
                 {
                     target: 4,
                     visible: true,
                 },
-
                 {
                     target: 5,
                     visible: true,

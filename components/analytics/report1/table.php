@@ -6,13 +6,38 @@
             <th>Destino</th>
             <th>Nome</th>
             <th>Telefone</th>
-            <th>E-mail</th>
             <th>Data</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
         <?php if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
+
+                $nome_formatted = "";
+                $str_nome_limit = 15;
+                if (strlen($row['nome']) <= 10) {
+                    $nome_formatted = $row['nome'];
+                } else {
+                    $nome_formatted = substr($row['nome'], 0, $str_nome_limit) . "...";
+                }
+
+                $origem_formatted = "";
+                $str_origem_limit = 20;
+                if (strlen(trim($row['origem'])) <= 10) {
+                    $origem_formatted = $row['origem'];
+                } else {
+                    $origem_formatted = substr(trim($row['origem']), 0, $str_origem_limit) . "...";
+                }
+
+                $destino_formatted = "";
+                $str_destino_limit = 20;
+                if (strlen(trim($row['destino'])) <= 10) {
+                    $destino_formatted = $row['destino'];
+                } else {
+                    $destino_formatted = substr(trim($row['destino']), 0, $str_destino_limit) . "...";
+                }
+
 
 
                 $data_ida =  str_replace("/", "-", $row["data_ida"]); // dd-mm-aaaa
@@ -40,24 +65,32 @@
 
                     <tr>
                         <td><?= $row['id_form']; ?></td>
-                        <td><?= $row['origem']; ?></td>
-                        <td><?= $row['destino']; ?></td>
-                        <td><?= $row['nome']; ?></td>
+                        <td><?= $origem_formatted; ?></td>
+                        <td><?= $destino_formatted; ?></td>
+                        <td><?= $nome_formatted; ?></td>
                         <td><?= $row['telefone']; ?></td>
-                        <td><?= $row['email']; ?></td>
                         <td><?= $created_formatted; ?></td>
+                        <td>[]</td>
                     </tr>
 
-                <?php } else { ?>
+                <?php } else {
+
+
+                ?>
 
                     <tr>
                         <td><?= $row['id_form']; ?></td>
-                        <td><?= utf8_encode($row['origem']); ?></td>
-                        <td><?= utf8_encode($row['destino']); ?></td>
-                        <td><?= utf8_encode($row['nome']); ?></td>
+                        <td><?= utf8_encode($origem_formatted); ?></td>
+                        <td><?= utf8_encode($destino_formatted); ?></td>
+                        <td><?= utf8_encode($nome_formatted); ?></td>
                         <td><?= utf8_encode($row['telefone']); ?></td>
-                        <td><?= utf8_encode($row['email']); ?></td>
                         <td><?= $created_formatted; ?></td>
+                        <td class="inline">
+
+                            <button class="btn btn-sm bt-light" style="display: inline-block;"><i class="bi bi-search"></i></button>
+                            <button class="btn btn-sm bt-danger" style="display: inline-block;"><i class="bi bi-trash3"></i></button>
+
+                        </td>
                     </tr>
 
                 <?php } ?>
