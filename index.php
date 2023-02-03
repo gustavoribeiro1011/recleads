@@ -3,9 +3,7 @@
 <html lang="pt-br">
 
 <?php
-include("functions.php");
-include('inc/head.php');
-?>
+include('inc/head.php'); ?>
 
 <body class="pt-4" style="margin-bottom: 32px;">
 
@@ -15,9 +13,10 @@ include('inc/head.php');
 	</section>
 
 	<div class="container-fluid mt-5" id="main">
-			<?php include $_SERVER['DOCUMENT_ROOT'] . BASEURL . 'components/dashboard/dashboard.php'; ?>
+
 	</div>
 
+	<?php include("functions.php"); ?>
 
 </body>
 

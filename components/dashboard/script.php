@@ -14,7 +14,7 @@
        columns: [{
          render: function(data, type, row, meta) {
            var html =
-             '<div class="card shadow mb-2"><span style="display:none;">' + row[0] + '</span>' +
+             '<div class="card mb-2"><span style="display:none;">' + row[0] + '</span>' +
              '  <div class="row">' +
              '  <div class="col-md-4 col-7 col-xl-8 p-0">' +
              '   <div class="card-body mt-2">' +
