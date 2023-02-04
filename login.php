@@ -1,10 +1,10 @@
-<?php;?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="img/ico.ico" />
-	<title>WEF Admin</title>
+	<title>Rec Leads</title>
 	<?php include 'css/global.php'; ?>
 	<link rel="stylesheet" href="css/login.css">
 
