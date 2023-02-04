@@ -8,10 +8,24 @@
    * Escuta alterações na hash da localização actual.
    * @param {Event} e HashChangeEvent object
    */
+  window.onhashchange = function(e) {
+    // Fazer algo quando existe uma alteração de valor
+
+    var page = lerHash();
+    // console.log("Alteração..page: " + page);
+    openPage(page);
+
+    // aqui chama-se função X mediante o valor da variável "pagina"
+  };
+
+  /**
+   * Escuta alterações na hash da localização actual.
+   * @param {Event} e HashChangeEvent object
+   */
   function handleOpenPage(page) {
 
     var page = page.toString();
-    console.log("??" + page);
+    // console.log("??" + page);
     // var page = lerHash();
 
     if (page.length == 0) {
@@ -27,7 +41,7 @@
     }
 
     if (page == "dashboard") {
-      console.log("precisa cair aqui!!");
+      // console.log("precisa cair aqui!!");
       //carregar pagina
       $("#main").load("components/dashboard/dashboard.php");
 
@@ -69,7 +83,7 @@
   function escreverHash(str) {
 
     window.location.hash = str;
-    console.log(str);
+    // console.log(str);
     handleOpenPage(str);
   }
 
@@ -79,17 +93,17 @@
    */
   function lerHash() {
     return window.location.hash.substr(1);
-    console.log("Ler hash=> " + window.location.hash.substr(1));
+    // console.log("Ler hash=> " + window.location.hash.substr(1));
   }
 
   if (window.location.hash) {
-    console.log('Fragment exists');
+    // console.log('Fragment exists');
     var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
     console.log("hash=> " + hash);
     openPage(hash);
 
   } else {
-    console.log('Fragment not exist');
+    // console.log('Fragment not exist');
     openPage("dashboard");
   }
 
@@ -110,7 +124,7 @@
 
             if (data['db'] == 'failed') {
               alertify.notify(data['db_message'], 'error', 5, function() {
-                console.log('dismissed');
+                // console.log('dismissed');
               });
             }
             if (data['db'] == 'success') {
