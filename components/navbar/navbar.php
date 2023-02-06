@@ -1,8 +1,8 @@
 <div class="fixed-top">
   <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container">
+    <div class="container-fluid">
       <a class="navbar-brand" type="button" href="javascript:void(0);" onClick="openPage('dashboard')">
-        <?= $app_name ?>
+        <img src="img/ico.ico" width="20px" style="margin-top:-5px;"> <?= $app_name ?>         
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

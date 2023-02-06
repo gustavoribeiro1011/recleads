@@ -7,7 +7,7 @@
 
 session_start();
 
-$app_name = 'Rec Leads 1.0';
+$app_name = 'Rec Leads';
 
 define('APP_NAME_URL', 'recleads');
 

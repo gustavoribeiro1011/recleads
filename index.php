@@ -12,7 +12,7 @@ include('inc/head.php'); ?>
 		<?php include("components/navbar/navbar.php"); ?>
 	</section>
 
-	<div class="container-fluid mt-5" id="main">
+	<div class="container-fluid mt-5 m-0 p-0" id="main">
 
 	</div>
 

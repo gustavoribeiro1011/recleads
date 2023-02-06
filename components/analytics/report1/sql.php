@@ -35,7 +35,8 @@ if (mysqli_connect_errno()) { // Se a conexão falhar...
   a.modified
   FROM forms a 
   LEFT JOIN domains b on (a.link=b.domain)
-  WHERE  a.origem != ' '
+  WHERE  a.origem != ' ' 
+  $date_interval 
   AND a.link LIKE '%$domain%' ORDER BY a.created DESC";
 
   //Retorna os resultados

@@ -1,12 +1,13 @@
-  *{
-    font-family: 'Ruda', sans-serif;
-  }
-
-.panel-left{
-	background: #0085E5;
+* {
+  font-family: 'Nunito', sans-serif;
 }
-.form-label{
-font-weight: bold;
+
+.panel-left {
+  background: #0085E5;
+}
+
+.form-label {
+  font-weight: bold;
 }
 
 body {
