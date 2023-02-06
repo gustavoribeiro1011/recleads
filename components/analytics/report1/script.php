@@ -2,6 +2,8 @@
     $(document).ready(function() {
         $('#example').DataTable({
             responsive: true,
+            retrieve: true,
+            stateSave: true,
             language: {
                 url: '//cdn.datatables.net/plug-ins/1.12.1/i18n/pt-BR.json'
             },

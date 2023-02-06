@@ -12,36 +12,23 @@
   var new_page = "";
 
 
-  function validationReport1() {
-
-    /** Preenchers os inputs caso tenha parametros na url */
-
-    var getUrlParameter = function getUrlParameter(sParam) {
-      var sPageURL = window.location.search.substring(1),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
-
-      for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
-
-        if (sParameterName[0] === sParam) {
-          return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-          console.log("aqui: " + sParameterName[1]);
-        }
-      }
-      console.log(getUrlParameter('1'));
-
-
-
-
-    };
-
-
-
+  /*
+   * Pega o Parametro da URL 
+   */
+  $.urlParam = function(name) {
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results == null) {
+      return null;
+    }
+    return decodeURI(results[1]) || 0;
   }
 
-  validationReport1();
+  function clearFilter() {
+    $('form :input').val('');
+  }
+
+
+
 
 
 
@@ -116,8 +103,6 @@
     }
 
     if (page.includes('relatorios') == true) {
-      validationReport1();
-
 
       $("#main").load("components/analytics/index.php");
 
@@ -173,7 +158,7 @@
     new_page = "";
 
     //Variáveis globais da Fn
-    var validation = ""; //responsável por verificar se algum filtro foi aplicado
+    var errors = ""; //responsável por verificar se algum filtro foi aplicado
 
 
     filter_active = true; //responsável para fizer a Fn "openPage()" que a página possui filtros
@@ -195,45 +180,47 @@
       // console.log("foi digitado data inicial e data final");
       param += "&dtin=" + data_in;
       param += "&dtfn=" + data_fn;
+      errors += "0";
 
     }
     //quando a pessoa só digitar a data inicial
     if (data_in.length > 0 && data_fn.length == 0) {
       console.log("foi digitado só data inicial");
       param += "&dtin=" + data_in;
+      errors += "0";
 
     }
     //quando a pessoa só digitar a data final
     if (data_fn.length > 0 && data_in.length == 0) {
       alert("Preencha a data inicial");
+      errors += "1";
     }
 
     //quando a pessoa não digitar nenhuma data
     if (data_in.length == 0 && data_fn.length == 0) {
       param += "&dtin=&dtfn=";
+      errors += "0";
     }
 
     if (page.length == 0) {
       page = window.location.hash.substr(1);
     }
-    console.log("page: " + page);
+    // console.log("page: " + page);
 
     var separators = ['domain=', '&'];
     param_ = page.split(new RegExp(separators.join('|'), 'g'));
 
-    console.log("***param_1: " + param_[1]);
+    // console.log("***param_1: " + param_[1]);
 
     new_page = "analytics/report1/index.php?domain=" + param_[1] + "&1=1" + param;
-    console.log("newpage: " + new_page);
+    // console.log("newpage: " + new_page);
 
-    console.log("domain: " + domain);
-    console.log("openPage(" + new_page + ")");
+    // console.log("domain: " + domain);
+    // console.log("openPage(" + new_page + ")");
 
-
-    openPage(new_page);
-
-    validationReport1();
-
+    if ((parseInt(errors) + 0) === 0) {
+      openPage(new_page);
+    }
 
 
   }
