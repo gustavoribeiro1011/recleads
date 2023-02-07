@@ -10,7 +10,7 @@
         <div class="card">
           <div class="card-body float-left w-100">
 
-            <form class="form-inline col-12 col-xl-4">
+            <form class="form-inline col-12 col-xl-1">
               <div class="form-group mb-2">
                 <label class="form-check-label"><b>Data Inicial: </b></label>
                 <input type="date" class="form-control" max="9999-12-31" id="dt_in">
@@ -46,23 +46,15 @@
   <script>
     $(document).ready(function() {
 
-      var today = new Date();
-      var dd = String(today.getDate()).padStart(2, '0');
-      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-      var yyyy = today.getFullYear();
+     
 
-      today =  yyyy + "-" + mm + "-" + dd;
-
-      if ($("#dt_in").val($.urlParam('dtin')).length > 0 && $("#dt_in").val($.urlParam('dtin')) !== "null") {
-        $("#dt_in").val($.urlParam('dtin'));
-        console.log("DTIN:" + $.urlParam('dtin'));  
-      } else {
-        $("#dt_in").val(today);
-      }
+          if ( isDate($("#dt_in").val($.urlParam('dtin')).val()) ) {
+              console.log("date is valid: " + $.urlParam('dtin'));
+            }
 
 
-        $("#dt_fn").val($.urlParam('dtfn'));        
-      
+            $("#dt_fn").val($.urlParam('dtfn'));
 
-    });
+
+          });
   </script>

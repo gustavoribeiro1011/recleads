@@ -16,7 +16,7 @@
            var html =
              '<div class="card mb-2"><span style="display:none;">' + row[0] + '</span>' +
              '  <div class="row">' +
-             '  <div class="col-md-4 col-7 col-xl-8 p-0">' +
+             '  <div class="col-md-12 col-12 col-xl-8 p-0">' +
              '   <div class="card-body mt-2">' +
              '     <h5 class="card-title" style="font-size:1rem; ">' +
              '     <a href="https://' + row[1] + '" class="btn-no-border" target="_blank" >' +
@@ -25,7 +25,7 @@
              '     <p class="card-text">' + row[2] + '</p>' +
              '     <p class="card-text">' +
              '     <a href="javascript:void(0)" class="btn btn-success btn-sm" type="button"' +
-             '     onClick="openPage(`analytics/report1/index.php?domain=' + row[1] + '`)">Ver leads</a>' +
+             '     onClick="openPage(`analytics/report1/index.php?domain=' + row[1] + '&dtin='+today+'`)">Ver leads</a>' +
              '     </p>' +
              '   </div>' +
              '  </div>' +

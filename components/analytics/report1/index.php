@@ -1,4 +1,4 @@
-<div class="container">
+<div class="">
   <?php
 
   require_once $_SERVER['DOCUMENT_ROOT'] . '/recleads/config.php';

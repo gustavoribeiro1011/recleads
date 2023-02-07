@@ -27,7 +27,7 @@
 				</div>
 				<div class="form-floating mb-2">
 					<input type="email" class="form-control" id="inputEmail" aria-describedby="email" placeholder="E-mail">
-					<label for="floatingInput">E-mail</label>
+					<label for="floatingInput">Login</label>
 				</div>
 				<div class="form-floating mb-2">
 					<input type="password" class="form-control" id="inputPassword" placeholder="Senha">

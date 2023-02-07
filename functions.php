@@ -12,6 +12,226 @@
   var new_page = "";
 
 
+  var today = new Date();
+          var dd = String(today.getDate()).padStart(2, '0');
+          var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+          var yyyy = today.getFullYear();
+
+          today = yyyy + "-" + mm + "-" + dd;//formato americano
+
+  function isDate(date) {
+    var format = 'yyyy-MM-dd';
+
+
+    /**
+     * This method gets the year index from the supplied format
+     */
+    function getYearIndex(format) {
+
+      var tokens = splitDateFormat(format);
+
+      if (tokens[0] === 'YYYY' ||
+        tokens[0] === 'yyyy') {
+        return 0;
+      } else if (tokens[1] === 'YYYY' ||
+        tokens[1] === 'yyyy') {
+        return 1;
+      } else if (tokens[2] === 'YYYY' ||
+        tokens[2] === 'yyyy') {
+        return 2;
+      }
+      // Returning the default value as -1
+      return -1;
+    }
+
+    /**
+     * This method returns the year string located at the supplied index
+     */
+    function getYear(date, index) {
+
+      var tokens = splitDateFormat(date);
+      return tokens[index];
+    }
+
+    /**
+     * This method gets the month index from the supplied format
+     */
+    function getMonthIndex(format) {
+
+      var tokens = splitDateFormat(format);
+
+      if (tokens[0] === 'MM' ||
+        tokens[0] === 'mm') {
+        return 0;
+      } else if (tokens[1] === 'MM' ||
+        tokens[1] === 'mm') {
+        return 1;
+      } else if (tokens[2] === 'MM' ||
+        tokens[2] === 'mm') {
+        return 2;
+      }
+      // Returning the default value as -1
+      return -1;
+    }
+
+    /**
+     * This method returns the month string located at the supplied index
+     */
+    function getMonth(date, index) {
+
+      var tokens = splitDateFormat(date);
+      return tokens[index];
+    }
+
+    /**
+     * This method gets the date index from the supplied format
+     */
+    function getDateIndex(format) {
+
+      var tokens = splitDateFormat(format);
+
+      if (tokens[0] === 'DD' ||
+        tokens[0] === 'dd') {
+        return 0;
+      } else if (tokens[1] === 'DD' ||
+        tokens[1] === 'dd') {
+        return 1;
+      } else if (tokens[2] === 'DD' ||
+        tokens[2] === 'dd') {
+        return 2;
+      }
+      // Returning the default value as -1
+      return -1;
+    }
+
+    /**
+     * This method returns the date string located at the supplied index
+     */
+    function getDate(date, index) {
+
+      var tokens = splitDateFormat(date);
+      return tokens[index];
+    }
+
+    /**
+     * This method returns true if date1 is before date2 else return false
+     */
+    function isBefore(date1, date2, format) {
+      // Validating if date1 date is greater than the date2 date
+      if (new Date(getYear(date1, getYearIndex(format)),
+          getMonth(date1, getMonthIndex(format)) - 1,
+          getDate(date1, getDateIndex(format))).getTime() >
+        new Date(getYear(date2, getYearIndex(format)),
+          getMonth(date2, getMonthIndex(format)) - 1,
+          getDate(date2, getDateIndex(format))).getTime()) {
+        return true;
+      }
+      return false;
+    }
+
+    /**
+     * This method returns true if date1 is after date2 else return false
+     */
+    function isAfter(date1, date2, format) {
+      // Validating if date2 date is less than the date1 date
+      if (new Date(getYear(date2, getYearIndex(format)),
+          getMonth(date2, getMonthIndex(format)) - 1,
+          getDate(date2, getDateIndex(format))).getTime() <
+        new Date(getYear(date1, getYearIndex(format)),
+          getMonth(date1, getMonthIndex(format)) - 1,
+          getDate(date1, getDateIndex(format))).getTime()
+      ) {
+        return true;
+      }
+      return false;
+    }
+
+    /**
+     * This method returns true if date1 is equals to date2 else return false
+     */
+    function isEquals(date1, date2, format) {
+      // Validating if date1 date is equals to the date2 date
+      if (new Date(getYear(date1, getYearIndex(format)),
+          getMonth(date1, getMonthIndex(format)) - 1,
+          getDate(date1, getDateIndex(format))).getTime() ===
+        new Date(getYear(date2, getYearIndex(format)),
+          getMonth(date2, getMonthIndex(format)) - 1,
+          getDate(date2, getDateIndex(format))).getTime()) {
+        return true;
+      }
+      return false;
+    }
+
+    /**
+     * This method validates and returns true if the supplied date is 
+     * equals to the current date.
+     */
+    function isCurrentDate(date, format) {
+      // Validating if the supplied date is the current date
+      if (new Date(getYear(date, getYearIndex(format)),
+          getMonth(date, getMonthIndex(format)) - 1,
+          getDate(date, getDateIndex(format))).getTime() ===
+        new Date(new Date().getFullYear(),
+          new Date().getMonth(),
+          new Date().getDate()).getTime()) {
+        return true;
+      }
+      return false;
+    }
+
+    /**
+     * This method validates and returns true if the supplied date value 
+     * is before the current date.
+     */
+    function isBeforeCurrentDate(date, format) {
+      // Validating if the supplied date is before the current date
+      if (new Date(getYear(date, getYearIndex(format)),
+          getMonth(date, getMonthIndex(format)) - 1,
+          getDate(date, getDateIndex(format))).getTime() <
+        new Date(new Date().getFullYear(),
+          new Date().getMonth(),
+          new Date().getDate()).getTime()) {
+        return true;
+      }
+      return false;
+    }
+
+    /**
+     * This method validates and returns true if the supplied date value 
+     * is after the current date.
+     */
+    function isAfterCurrentDate(date, format) {
+      // Validating if the supplied date is before the current date
+      if (new Date(getYear(date, getYearIndex(format)),
+          getMonth(date, getMonthIndex(format)) - 1,
+          getDate(date, getDateIndex(format))).getTime() >
+        new Date(new Date().getFullYear(),
+          new Date().getMonth(),
+          new Date().getDate()).getTime()) {
+        return true;
+      }
+      return false;
+    }
+
+    /**
+     * This method splits the supplied date OR format based 
+     * on non alpha numeric characters in the supplied string.
+     */
+    function splitDateFormat(dateFormat) {
+      // Spliting the supplied string based on non characters
+      return dateFormat.split(/\W/);
+    }
+
+
+    // Validating if the supplied date string is valid and not a NaN (Not a Number)
+    if (!isNaN(new Date(getYear(date, getYearIndex(format)),
+        getMonth(date, getMonthIndex(format)) - 1,
+        getDate(date, getDateIndex(format))))) {
+      return true;
+    }
+    return false;
+  }
+
   /*
    * Pega o Parametro da URL 
    */
@@ -94,11 +314,7 @@
     if (page.includes('analytics/report1') == true) {
 
 
-
-      $("#main").load("components/" + page);
-
-
-
+      $("#main").load("components/" + page + "&dt_in="+today);
 
     }
 
