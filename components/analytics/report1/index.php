@@ -2,6 +2,7 @@
   <?php
 
   require_once $_SERVER['DOCUMENT_ROOT'] . '/recleads/config.php';
+  include $_SERVER['DOCUMENT_ROOT'] . '/recleads/api/ifMobileOrDesktop.php';
 
   //Parâmetros (Globais)
   $_GET['domain'] = (isset($_GET['domain'])) ? ($domain = $_GET['domain']) : null;

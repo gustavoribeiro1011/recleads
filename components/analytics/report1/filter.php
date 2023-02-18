@@ -10,7 +10,7 @@
         <div class="card">
           <div class="card-body float-left w-100">
 
-            <form class="form-inline col-12 col-xl-1">
+            <form class="form-inline col-12 col-xl-2 col-xxl-1">
               <div class="form-group mb-2">
                 <label class="form-check-label"><b>Data Inicial: </b></label>
                 <input type="date" class="form-control" max="9999-12-31" id="dt_in">

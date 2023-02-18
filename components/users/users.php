@@ -1,4 +1,4 @@
-<div class="container">
+<div class="">
   <h5>Gerenciar Usuários</h5>
 
   <div>

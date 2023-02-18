@@ -1,4 +1,4 @@
-<div class="container">
+<div class="">
     <h5>Painel do administrador</h5>
     <div class="col mt-4 mb-2">
         <div class="row">

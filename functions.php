@@ -11,13 +11,16 @@
   var param = "";
   var new_page = "";
 
+  var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  var tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
 
   var today = new Date();
-          var dd = String(today.getDate()).padStart(2, '0');
-          var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-          var yyyy = today.getFullYear();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
 
-          today = yyyy + "-" + mm + "-" + dd;//formato americano
+  today = yyyy + "-" + mm + "-" + dd; //formato americano
 
   function isDate(date) {
     var format = 'yyyy-MM-dd';
@@ -314,7 +317,7 @@
     if (page.includes('analytics/report1') == true) {
 
 
-      $("#main").load("components/" + page + "&dt_in="+today);
+      $("#main").load("components/" + page + "&dt_in=" + today);
 
     }
 
@@ -447,7 +450,7 @@
    */
   function remove(event, id, param) {
 
-    alertify.confirm('Remover rec', 'Essa ação resulta em uma <strong>exclusão permanente</strong> da gravação. Após a exclusão, essa ação não poderá ser revertida. <br>Tem certeza disso?', function() {
+    alertify.confirm('Excluir gravação', 'Essa ação resulta em uma <strong>exclusão permanente</strong> da gravação. Após a exclusão, essa ação não poderá ser revertida. <br>Tem certeza disso?', function() {
 
         //--------------------------------------------------------------------------
         $.ajax({

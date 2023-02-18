@@ -24,7 +24,7 @@
              '    </h5>' +
              '     <p class="card-text">' + row[2] + '</p>' +
              '     <p class="card-text">' +
-             '     <a href="javascript:void(0)" class="btn btn-success btn-sm" type="button"' +
+             '     <a href="#analytics/report1/index.php?domain=' + row[1] + '&dtin='+today+'" class="btn btn-success btn-sm" type="button"' +
              '     onClick="openPage(`analytics/report1/index.php?domain=' + row[1] + '&dtin='+today+'`)">Ver leads</a>' +
              '     </p>' +
              '   </div>' +

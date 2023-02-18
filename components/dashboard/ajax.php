@@ -11,9 +11,9 @@ $user_id = $_SESSION['userid_' . $app_token];
 
 if ($level == "admin") {
     //lista geral
-    $sql = "SELECT * FROM domains ORDER BY 3,1 DESC";
+    $sql = "SELECT * FROM domains WHERE status = 'ATIVO' ORDER BY 3,1 DESC";
 } else {
-    $sql = "SELECT * FROM domains WHERE user = $user_id  ORDER BY 3,1 DESC";
+    $sql = "SELECT * FROM domains WHERE user = $user_id  AND status = 'ativo' ORDER BY 3,1 DESC";
 }
 
 //Definir range data atual (hoje)

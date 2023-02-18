@@ -12,7 +12,7 @@
 			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 			<?php
-			include $_SERVER['DOCUMENT_ROOT'] . '/recleads/css/global.php'; ?>
+			include $_SERVER['DOCUMENT_ROOT'] . '/recleads/css/global.php';  ?>
 
 			<!-- Fonts-->
 			<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,6 +55,6 @@
 			<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.2.3/css/fixedHeader.dataTables.min.css">
 
 			<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-
+			
 		</head>
 	<?php	}

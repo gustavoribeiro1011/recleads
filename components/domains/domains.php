@@ -1,4 +1,4 @@
-<div class="container">
+<div class="">
 
   <div>
     <?php
@@ -12,16 +12,18 @@
 
       $xcrud->table('domains'); //employees - MySQL table name
       $xcrud->where('user=', $id);
-      $xcrud->columns('domain'); //employees - MySQL table name
+      $xcrud->columns('domain,status'); //employees - MySQL table name
       $xcrud->table_name('Domínios');
       // $xcrud->unset_title();
       //$xcrud->column_pattern('user', '<a href="#" onClick="openPage(`domains`,{id})">{value}</a>');
 
       $xcrud->unset_numbers();
 
-      $xcrud->fields('domain,user');
+      $xcrud->fields('domain,status,user');
 
       $xcrud->change_type("user", "hidden", $id);
+      $xcrud->change_type('status', 'select', '', 'ativo,desativado');
+
 
       //Hide buttons 
       $xcrud->unset_print();
