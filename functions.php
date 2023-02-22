@@ -321,6 +321,13 @@
 
     }
 
+    if (page.includes('analytics/formularios-ativos') == true) {
+
+
+      $("#main").load("components/" + page );
+
+    }
+
     if (page.includes('relatorios') == true) {
 
       $("#main").load("components/analytics/index.php");

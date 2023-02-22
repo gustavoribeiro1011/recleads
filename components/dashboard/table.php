@@ -3,7 +3,7 @@
         <thead style="display:none;">
             <tr>
                 <th>Domain</th>
-                <th>Leads</th>
+                <th>Leads</th>                
             </tr>
         </thead>
     </table>

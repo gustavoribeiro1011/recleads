@@ -1,4 +1,15 @@
-<div class="container">
-  <h5>Leads</h5>
-  <a href="javascript:void(0);" class="btn btn-outline-primary" onClick="openPage('report2')"> <i class="bi bi-graph-down"></i> Total de Leads por período</a>
+<div class="container m-0 p-0">
+  <div class="col mb-2">
+    <div class="row">
+      <h5>Relatórios</h5>
+    </div>
+    <div class="row">
+      <div class="col-12">
+
+        <button type="button" class="btn btn-outline-primary" onClick="openPage('analytics/formularios-ativos')">Formulários ativos</button>
+
+      </div>
+    </div>
+
+  </div>
 </div>

@@ -1,6 +1,6 @@
  <script>
    $(document).ready(function() {
-     var table = $('#example').DataTable({      
+     var table = $('#example').DataTable({
        retrieve: true,
        paging: true,
 
@@ -9,7 +9,7 @@
          searchPlaceholder: "Buscar por domínio",
          search: "",
        },
-
+       
        ajax: '<?= BASEURL; ?>components/dashboard/ajax.php',
        columns: [{
          render: function(data, type, row, meta) {
@@ -24,8 +24,8 @@
              '    </h5>' +
              '     <p class="card-text">' + row[2] + '</p>' +
              '     <p class="card-text">' +
-             '     <a href="#analytics/report1/index.php?domain=' + row[1] + '&dtin='+today+'" class="btn btn-success btn-sm" type="button"' +
-             '     onClick="openPage(`analytics/report1/index.php?domain=' + row[1] + '&dtin='+today+'`)">Ver leads</a>' +
+             '     <a href="#analytics/report1/index.php?domain=' + row[1] + '&dtin=' + today + '" class="btn btn-success btn-sm" type="button"' +
+             '     onClick="openPage(`analytics/report1/index.php?domain=' + row[1] + '&dtin=' + today + '`)">Ver leads</a>' +
              '     </p>' +
              '   </div>' +
              '  </div>' +
